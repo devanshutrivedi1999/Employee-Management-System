@@ -1,0 +1,130 @@
+{% load static %}
+
+{% if user.is_authenticated %}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Employee Management System</title>
+    
+    <link rel="stylesheet" type="text/css" href="{%static 'css/style.css'%}">
+    <link rel="icon" href="https://www.pinclipart.com/picdir/middle/236-2369050_involve-employees-and-their-representatives-ensuring-clipart.png">
+  
+   </head>
+   
+   <body>
+
+    <div class="container-fluid-md py-3 text-center bg-dark text-light">
+        <h1>Employee Management System</h1>
+      </div>
+      <br><br>
+
+    <div class="container py-3">
+
+      <form method="post" action="">
+        {% csrf_token %}
+        
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputId">Employement ID</label>
+            <input type="text" class="form-control" id="inputId" name="inputId" placeholder="Employee ID">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputName">Employee Name</label>
+            <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Name of the Employee">
+          </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail">Employee Email</label>
+              <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email of the employee">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAddress">Employee Address</label>
+              <input type="text" class="form-control" id="inputAddress" name="inputAddress" placeholder="Address">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputContact">Employee Contact </label>
+              <input type="text" class="form-control" id="inputContact" name="inputContact" placeholder="Contact of the employee">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputDesign">Employee Designation</label>
+              <input type="text" class="form-control" id="inputDesign" name="inputDesign" placeholder="Employee Present Designation">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputSal">Employee Current Salary</label>
+              <input type="text" class="form-control" id="inputSal" name="inputSal" placeholder="Current Salary per Annum">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputdoj">Date of Joining</label>
+              <input type="date" class="form-control" id="inputdoj" name="inputdoj" placeholder="Joining Date">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputExp">Employee Work Experience</label>
+              <input type="text" class="form-control" id="inputExp" name="inputExp" placeholder="Numer of Experience">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPcomp">Employee Previous company</label>
+              <input type="text" class="form-control" id="inputPcomp" name="inputPcomp" placeholder="Employee Previous Company">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEdep">Employee Department</label>
+              <input type="text" class="form-control" id="inputEdep" name="inputEdep" placeholder="Serving Department">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputBankaccount">Employee Bank Account</label>
+              <input type="text" class="form-control" id="inputBankaccount" name="inputBankaccount" placeholder="Employee Bank Account">
+            </div>
+            
+          </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+
+    <footer class="fixed-bottom">
+      <div class="container-fluid-md py-3 text-center bg-dark text-light">
+        <h4> Developed by Devanshu Trivedi using Django.</h4>
+        
+      </div>
+      
+    </footer>
+    
+      
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+{% else %}
+
+Please Login to the admin and refresh this page to continue
+
+{% endif %}
